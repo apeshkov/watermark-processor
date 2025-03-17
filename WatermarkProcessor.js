@@ -16,6 +16,7 @@ class WatermarkProcessor extends VideoProcessor {
   }
 
   onInit() {
+    console.log('Trying to initialize 2D context')  
     const canvas = this.getOutput()
     if (canvas) {
       this.context = canvas.getContext('2d')
