@@ -37,8 +37,11 @@ class WatermarkProcessor extends VideoProcessor {
   _renderFrame(input, output) {
     if (!this.context) return
 
+    this.context.filter = 'grayscale(100%)'
+    
     // Draw the video frame onto the canvas
     this.context.drawImage(input, 0, 0, output.width, output.height)
+      
 
     // Overlay the watermark if available
     if (this.watermarkImage) {
